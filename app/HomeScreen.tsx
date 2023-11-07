@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { BankLists } from "../components/BankLists";
 import { Divider } from "../components/Divider";
+import { MoneyStatusBar } from "../components/MoneyStatusBar";
 
 export function HomeScreen() {
   const banks = ["Itaú", "Nubak", "Neon", "Banco Do Brasil", "Caixa"];
@@ -23,10 +24,16 @@ export function HomeScreen() {
           <View style={styles.profile}></View>
           <View style={styles.balance}>
             <View>
-              <View style={styles.generalBalance}>
-                <Text style={styles.titleBalance}>Saldo Geral</Text>
-                <Text style={styles.amountGeneralBalance}>R$: 5000,00 </Text>
+              <View style={styles.statusbarBalanceWrapper}>
+                <View style={styles.statusBar}>
+                  <MoneyStatusBar />
+                </View>
+                <View style={styles.generalBalance}>
+                  <Text style={styles.titleBalance}>Saldo Geral</Text>
+                  <Text style={styles.amountGeneralBalance}>R$: 5000,00 </Text>
+                </View>
               </View>
+
               <Divider />
               <Text style={styles.titleBanksBalance}>Meus Saldos</Text>
             </View>
@@ -69,13 +76,23 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFFEFA",
     borderRadius: 20,
   },
+  statusbarBalanceWrapper: {
+    flexDirection: "row",
+    marginTop: 10,
+    marginBottom: 20,
+  },
   generalBalance: {
-    width: "100%",
+    width: "50%",
     height: 50,
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignContent: "center",
-    marginLeft: 50,
+    flexDirection: "column",
     marginTop: 20,
+  },
+  statusBar: {
+    width: 20,
+    height: 50,
+    marginLeft: 20,
   },
   titleBalance: {
     fontSize: 17,

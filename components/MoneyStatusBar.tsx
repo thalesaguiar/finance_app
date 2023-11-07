@@ -1,6 +1,6 @@
 import { View, StyleSheet } from "react-native";
 
-export function Divider() {
+export function MoneyStatusBar() {
   return (
     <View style={styles.container}>
       <View style={styles.divider}></View>
@@ -10,16 +10,15 @@ export function Divider() {
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
-    height: 1,
+    flexDirection: "row",
     alignItems: "center",
-    marginBottom: 10,
+    marginBottom: 20,
     marginTop: 10,
   },
   divider: {
-    width: "85%",
-    height: 1,
-    backgroundColor: "gray",
-    opacity: 0.1,
+    width: 7,
+    height: 69,
+    backgroundColor: "green",
+    borderRadius: 50,
   },
 });
