@@ -1,6 +1,13 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
-import ModalScreen from "../app/modal";
-export default function Login() {
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  Pressable,
+} from "react-native";
+
+export function Login() {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -24,6 +31,7 @@ export default function Login() {
         </TouchableOpacity>
         <View style={styles.login}>
           <Text style={styles.loginText}>Você já tem uma conta ? </Text>
+
           <TouchableOpacity>
             <Text style={styles.loginButton}>Login</Text>
           </TouchableOpacity>

@@ -8,7 +8,8 @@ import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
 import { useEffect } from "react";
 import { useColorScheme } from "react-native";
-import Login from "./login";
+import { Login } from "./Login";
+import { HomeScreen } from "./HomeScreen";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -52,7 +53,7 @@ function RootLayoutNav() {
 
   let loged = false;
   if (!loged) {
-    return <Login />;
+    return <HomeScreen />;
   } else {
     return (
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
