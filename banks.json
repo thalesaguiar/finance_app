@@ -1,0 +1,20 @@
+{
+  "bancos": [
+    {
+      "nome": "Itaú",
+      "logo": "itau.png"
+    },
+    {
+      "nome": "Nubank",
+      "logo": "nubank.png"
+    },
+    {
+      "nome": "Neon",
+      "logo": "neon.png"
+    },
+    {
+      "nome": "Banco do Brasil",
+      "logo": "bb.png"
+    }
+  ]
+}

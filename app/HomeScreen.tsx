@@ -1,17 +1,20 @@
+import React from "react";
 import {
+  Image,
   Text,
   View,
   StyleSheet,
   ScrollView,
   StatusBar,
   FlatList,
+  TouchableOpacity,
 } from "react-native";
-import { BankLists } from "../components/BankLists";
+import banks from "../banks.json";
 import { Divider } from "../components/Divider";
 import { MoneyStatusBar } from "../components/MoneyStatusBar";
+import { ProfileStats } from "../components/ProfileStats";
 
 export function HomeScreen() {
-  const banks = ["Itaú", "Nubak", "Neon", "Banco Do Brasil", "Caixa"];
   return (
     <>
       <StatusBar
@@ -21,7 +24,9 @@ export function HomeScreen() {
       />
       <ScrollView>
         <View style={styles.container}>
-          <View style={styles.profile}></View>
+          <View style={styles.profile}>
+            <ProfileStats />
+          </View>
           <View style={styles.balance}>
             <View>
               <View style={styles.statusbarBalanceWrapper}>
@@ -30,18 +35,35 @@ export function HomeScreen() {
                 </View>
                 <View style={styles.generalBalance}>
                   <Text style={styles.titleBalance}>Saldo Geral</Text>
-                  <Text style={styles.amountGeneralBalance}>R$: 5000,00 </Text>
+                  <Text style={styles.amountGeneralBalance}>R$: 5000,00</Text>
                 </View>
               </View>
-
               <Divider />
               <Text style={styles.titleBanksBalance}>Meus Saldos</Text>
             </View>
             <FlatList
-              data={banks}
-              keyExtractor={(item) => item}
-              renderItem={({ item }) => <BankLists key={item} banks={item} />}
+              data={banks.bancos}
+              keyExtractor={(item) => item.nome}
+              renderItem={({ item }) => (
+                <>
+                  <View style={styles.logoWrapp}>
+                    <Image
+                      source={require("../assets/images/nubank.png")}
+                      style={styles.logoBank}
+                    />
+                    <Text style={styles.bankName}>{item.nome}</Text>
+                  </View>
+                  <View style={styles.teste}>
+                    <Divider />
+                  </View>
+                </>
+              )}
             />
+            <TouchableOpacity style={styles.buttonWrapper}>
+              <View style={styles.button}>
+                <Text style={styles.buttonText}>Gerenciar Contas</Text>
+              </View>
+            </TouchableOpacity>
           </View>
           <Text> </Text>
           <View style={styles.financial}></View>
@@ -65,7 +87,7 @@ const styles = StyleSheet.create({
   },
   balance: {
     width: "90%",
-    height: "50%",
+    height: "55%",
     marginTop: 140,
     backgroundColor: "#FFFEFA",
     borderRadius: 20,
@@ -107,5 +129,45 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginLeft: 30,
     marginBottom: 10,
+  },
+  buttonWrapper: {
+    width: "100%",
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  button: {
+    width: "80%",
+    backgroundColor: "#DFFEEA",
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 5,
+  },
+  buttonText: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#17C74E",
+  },
+  logoBank: {
+    width: 40,
+    height: 40,
+    borderRadius: 50,
+  },
+  logoWrapp: {
+    flexDirection: "row",
+    marginLeft: 20,
+    marginTop: 20,
+  },
+  bankName: {
+    fontSize: 18,
+    marginTop: 10,
+    marginLeft: 10,
+  },
+  teste: {
+    flexDirection: "column",
+    width: "100%",
+    marginTop: 10,
   },
 });

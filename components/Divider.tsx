@@ -13,8 +13,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 1,
     alignItems: "center",
-    marginBottom: 10,
-    marginTop: 10,
+    marginBottom: 0,
   },
   divider: {
     width: "85%",

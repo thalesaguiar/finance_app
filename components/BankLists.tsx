@@ -2,14 +2,14 @@ import { View, Text, StyleSheet } from "react-native";
 import { Divider } from "./Divider";
 
 type Props = {
-  banks: string;
+  nome: string;
 };
 
-export function BankLists({ banks }: Props) {
+export function BankLists({ nome }: Props) {
   return (
     <View style={styles.container}>
       <View style={styles.banksWrapper}>
-        <Text style={styles.bankName}>{banks}</Text>
+        <Text style={styles.bankName}>{nome}</Text>
         <Text style={styles.amount}>R$ 1.000,00</Text>
       </View>
       <Divider />
