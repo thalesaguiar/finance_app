@@ -16,6 +16,7 @@ import { MoneyStatusBar } from "../components/MoneyStatusBar";
 import { ProfileStats } from "../components/ProfileStats";
 import { Amount } from "../components/Amount";
 import { Feather } from "@expo/vector-icons";
+import { BankAcounts } from "../components/BankAcounts";
 
 export function HomeScreen() {
   return (
@@ -25,12 +26,15 @@ export function HomeScreen() {
         backgroundColor="#17C74E"
         translucent
       />
-      <View style={styles.profile}>
-        <ProfileStats />
-      </View>
+
       <ScrollView style={styles.container}>
-        <View style={styles.amountWrapper}>
-          <Amount />
+        <View>
+          <View style={styles.profile}>
+            <ProfileStats />
+          </View>
+          <View style={styles.amountWrapper}>
+            <Amount />
+          </View>
         </View>
       </ScrollView>
     </>
@@ -40,11 +44,10 @@ export function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#EFEFEB",
-    marginTop: 200,
+    backgroundColor: "#EFEFED",
   },
   profile: {
-    position: "absolute",
+    flex: 1,
     width: "100%",
     height: 200,
     backgroundColor: "#17C74E",
@@ -60,6 +63,7 @@ const styles = StyleSheet.create({
   },
   amountWrapper: {
     position: "relative",
-    bottom: 50,
+    bottom: 10,
+    zIndex: 100,
   },
 });
