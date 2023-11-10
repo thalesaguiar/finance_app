@@ -17,8 +17,10 @@ const styles = StyleSheet.create({
   },
   divider: {
     width: 7,
-    height: 69,
+    height: 68,
     backgroundColor: "green",
     borderRadius: 50,
+    marginTop: 5,
+    marginLeft: 10,
   },
 });

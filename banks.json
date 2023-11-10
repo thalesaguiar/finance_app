@@ -2,19 +2,32 @@
   "bancos": [
     {
       "nome": "Itaú",
-      "logo": "itau.png"
+      "path": "../assets/images/itau.png"
     },
     {
       "nome": "Nubank",
-      "logo": "nubank.png"
+      "path": "../assets/images/nubank.png"
     },
     {
       "nome": "Neon",
-      "logo": "neon.png"
+      "path": "../assets/images/neon.png"
     },
     {
       "nome": "Banco do Brasil",
-      "logo": "bb.png"
+      "path": "../assets/images/bb.png"
+    }
+    ,
+    {
+      "nome": "Caixa",
+      "path": "../assets/images/caixa.png"
+    },
+    {
+      "nome": "PicPay",
+      "path": "../assets/images/picpay.png"
+    },
+    {
+      "nome": "Montreal Bank",
+      "path": "../assets/images/montrealbank.png"
     }
   ]
 }
