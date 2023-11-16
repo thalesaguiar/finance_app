@@ -9,7 +9,7 @@ export function ProfileStats() {
           <TouchableOpacity>
             <View style={styles.imageWrapper}>
               <Image
-                source={require("../assets/images/user.png")}
+                source={require("@assets/user.png")}
                 style={styles.profileImage}
               />
             </View>

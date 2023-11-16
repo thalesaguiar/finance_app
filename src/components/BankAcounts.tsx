@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
   SectionList,
 } from "react-native";
-import { Divider } from "../components/Divider";
+import { Divider } from "./Divider";
 
 export function BankAcounts() {
   return (
@@ -23,7 +23,7 @@ export function BankAcounts() {
               <View style={styles.banksWrapper}>
                 <View style={styles.banks}>
                   <Image
-                    source={require("../assets/images/itau.png")}
+                    source={require("@assets/itau.png")}
                     style={styles.bankLogo}
                   />
                 </View>

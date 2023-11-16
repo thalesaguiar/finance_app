@@ -1,20 +1,11 @@
 import { useState } from "react";
 import {
-  Image,
   Text,
   View,
   StyleSheet,
   Pressable,
-  ScrollView,
-  StatusBar,
-  FlatList,
-  TouchableOpacity,
-  SectionList,
 } from "react-native";
-import banks from "../banks.json";
-import { Divider } from "./Divider";
 import { MoneyStatusBar } from "./MoneyStatusBar";
-import { ProfileStats } from "./ProfileStats";
 import { Feather } from "@expo/vector-icons";
 import { BankAcounts } from "./BankAcounts";
 
