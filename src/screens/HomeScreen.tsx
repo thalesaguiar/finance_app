@@ -10,8 +10,8 @@ import {
   TouchableOpacity,
   SectionList,
 } from "react-native";
-import { ProfileStats } from "@components/ProfileStats";
-import { Amount } from "@components/Amount";
+import { ProfileStats } from "@components/profile-status";
+import { Amount } from "@components/amount";
 
 
 export function HomeScreen() {

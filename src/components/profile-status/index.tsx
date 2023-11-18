@@ -1,10 +1,10 @@
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { Container } from "./styles";
 
 export function ProfileStats() {
   return (
-    <>
-      <View style={styles.container}>
+      <Container>
         <View style={styles.imageTextWrapper}>
           <TouchableOpacity>
             <View style={styles.imageWrapper}>
@@ -26,23 +26,11 @@ export function ProfileStats() {
             <Feather name={"bell"} size={35} color={"#E7F3E0"} />
           </View>
         </TouchableOpacity>
-      </View>
-    </>
+      </Container>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    width: "100%",
-    height: "100%",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginTop: 20,
-    marginLeft: 20,
-    marginBottom: 20,
-  },
   imageWrapper: {
     width: 60,
     height: 60,
@@ -51,6 +39,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginRight: 10,
+    marginLeft: 20
   },
   profileImage: {
     width: 40,
@@ -77,7 +66,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
-    marginRight: 50,
+    marginRight: 20,
   },
   ts: {
     flexDirection: "row",

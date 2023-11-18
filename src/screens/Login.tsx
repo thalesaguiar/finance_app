@@ -5,6 +5,8 @@ import {
   TouchableOpacity,
   Image,
   Pressable,
+  SafeAreaView,
+  StatusBar,
 } from "react-native";
 
 export function Login() {
