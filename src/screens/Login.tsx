@@ -62,7 +62,6 @@ const styles = StyleSheet.create({
     height: "40%",
     borderBottomRightRadius: 100,
     borderBottomLeftRadius: 100,
-    marginTop: 30,
     marginBottom: 30,
   },
   loginSection: {

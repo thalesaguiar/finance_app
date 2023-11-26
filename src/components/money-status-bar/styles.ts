@@ -1,5 +1,12 @@
 import styled from 'styled-components/native';
 
+export type StatusBarTypeStyleProps = 'PRIMARY' | 'SECONDARY';
+
+type Props = {
+    type: StatusBarTypeStyleProps;
+}
+
+
 export const Container = styled.View`
     flex-direction: row;
     align-items: center;
