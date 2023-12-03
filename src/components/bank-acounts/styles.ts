@@ -1,30 +1,26 @@
-import styled from 'styled-components/native';
+import { TouchableOpacity } from 'react-native';
+import {styled,css} from 'styled-components/native';
 
-export const Container = styled.View`
-   flex: 1;
-    background-color: #EFEFED;
-    height: 400px;
+
+export const Container = styled(TouchableOpacity)`
+    flex: 1;
     align-items: center;
 `
 
 export const BankListWrapper = styled.View`
     width: 85%;
-    background-color: #fff;
-    height: 200px;
+    background-color: ${(props) => props.theme.COLORS.WHITE };
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 `
 
 export const BanksInfo = styled.View`
     width: 100%;
-    height: 61px;
+    height: 90px;
     flex-direction: row;
     justify-content: space-between;
-    background-color: #fff;
-    margin-top: 40px;
 `
 export const BanksLogo = styled.View`
-    height: 70px;
     justify-content: center;
 `
 
@@ -36,7 +32,6 @@ export const Icon = styled.Image`
 `
 
 export const BankName = styled.View`
-    background-color: #fff;
     justify-content: center;
     margin-right: 40px;
 `
@@ -57,6 +52,6 @@ export const BankAmountWrapper = styled.View`
 
 export const AmountBank = styled.Text`
     font-size: 19px;
-    color: blue;
-    font-weight: bold;
+    color: ${(props) => props.theme.COLORS.BLUE};;
+    font-weight: ${(props) => props.theme.FONT_WEIGHT.SM};
 `
