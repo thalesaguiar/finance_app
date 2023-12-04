@@ -9,7 +9,19 @@ import {
   StatusBar,
 } from "react-native";
 
+import { useNavigation } from "@react-navigation/native";
+
+
+
+
 export function Login() {
+
+  const navigation = useNavigation();
+
+  function handleNewScreen() {
+    navigation.navigate('HomeScreen');
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
@@ -34,7 +46,7 @@ export function Login() {
         <View style={styles.login}>
           <Text style={styles.loginText}>Você já tem uma conta ? </Text>
 
-          <TouchableOpacity>
+          <TouchableOpacity onPress={handleNewScreen}>
             <Text style={styles.loginButton}>Login</Text>
           </TouchableOpacity>
         </View>
