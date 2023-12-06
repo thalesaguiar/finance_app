@@ -1,34 +1,18 @@
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-  Pressable,
-  SafeAreaView,
-  StatusBar,
-} from "react-native";
-
+import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
+import Pig from "@assets/pig3.png";
 import { useNavigation } from "@react-navigation/native";
 
-
-
-
 export function Login() {
-
   const navigation = useNavigation();
 
   function handleNewScreen() {
-    navigation.navigate('HomeScreen');
+    navigation.navigate("SigIn");
   }
 
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <Image
-          style={styles.loginImage}
-          source={require("@assets/loginImage.png")}
-        />
+        <Image source={Pig} style={styles.loginImage} />
       </View>
       <View style={styles.backgroundCircle}></View>
       <Text style={styles.title}>O Seu Controle Financeiro</Text>
@@ -67,15 +51,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontWeight: "bold",
   },
-  backgroundCircle: {
-    position: "relative",
-    alignItems: "baseline",
-    backgroundColor: "#D5F7E6",
-    height: "40%",
-    borderBottomRightRadius: 100,
-    borderBottomLeftRadius: 100,
-    marginBottom: 30,
-  },
+
   loginSection: {
     marginTop: 80,
     alignItems: "center",
@@ -118,15 +94,12 @@ const styles = StyleSheet.create({
     color: "#1DBD18",
   },
   imageContainer: {
-    position: "absolute",
-    zIndex: 100,
-    marginLeft: 60,
-    marginTop: 40,
+    marginTop: 10,
     justifyContent: "center",
     alignItems: "center",
   },
   loginImage: {
-    width: 300,
-    height: 300,
+    width: 220,
+    height: 220,
   },
 });
