@@ -9,12 +9,15 @@ export function Login() {
     navigation.navigate("SigIn");
   }
 
+  function handleCreateAcountScreen() {
+    navigation.navigate("CreateAcount");
+  }
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <Image source={Pig} style={styles.loginImage} />
       </View>
-      <View style={styles.backgroundCircle}></View>
       <Text style={styles.title}>O Seu Controle Financeiro</Text>
       <Text style={styles.title}> e prosperidade começa aqui.</Text>
       <View style={styles.textCarouselWrapper}>
@@ -24,7 +27,10 @@ export function Login() {
         </Text>
       </View>
       <View style={styles.loginSection}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          onPress={handleCreateAcountScreen}
+          style={styles.button}
+        >
           <Text style={styles.buttonText}>Criar uma conta</Text>
         </TouchableOpacity>
         <View style={styles.login}>
