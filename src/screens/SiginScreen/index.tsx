@@ -13,7 +13,16 @@ import { Form } from "@components/Form";
 import { Button } from "@components/Button";
 import { ScrollView } from "react-native";
 import { GoBackButton } from "@components/GoBackButton";
+
+import { StackActions, useNavigation } from "@react-navigation/native";
+
 export function SiginScreen() {
+  const navigation = useNavigation();
+
+  function handleLoginButton() {
+    navigation.dispatch(StackActions.replace("HomeScreen"));
+  }
+
   return (
     <Container>
       <WrapperContent>
@@ -31,7 +40,7 @@ export function SiginScreen() {
         <Form title="Email" placeholder="Digite seu e-mail" />
         <Form title="Senha" placeholder="Digite sua senha" />
 
-        <Button title="Continuar" type="PRIMARY" />
+        <Button title="Continuar" type="PRIMARY" onPress={handleLoginButton} />
       </WrapperContent>
     </Container>
   );
