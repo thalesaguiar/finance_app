@@ -11,8 +11,6 @@ import {
   Title,
 } from "./styles";
 
-import { Divider } from "@components/divider";
-
 type IconName = "eye" | "eye-off";
 
 export function Amount() {
@@ -25,7 +23,7 @@ export function Amount() {
     setShow(!displayEye);
     if (displayEye) {
       setIcon("eye-off");
-      setShowAmount("  * * * * *");
+      setShowAmount("----");
     } else {
       setIcon("eye");
       setShowAmount("");
