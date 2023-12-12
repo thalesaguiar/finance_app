@@ -1,7 +1,6 @@
-    
-    const Theme = {
+const theme = {
 
-        COLORS: {
+  COLORS: {
             WHITE: '#FFFFFF',
             WHITE_100: '#EFEFED', 
 
@@ -27,14 +26,14 @@
             BOLD: 'Roboto_700Bold',
         },
 
-        FONT_WEIGHT: {
-            SM: 14,
-            MD: 16,
-            LG: 18,
-            XL: 24
+        FONT_SIZE: {
+          SM: 14,
+          MD: 16,
+          LG: 18,
+          XL: 32
         }
 
   }
 
 
-export default Theme;
+export {theme};

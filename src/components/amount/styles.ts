@@ -2,7 +2,7 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
    flex: 1;
-    background-color: #EFEFED;
+    background-color: ${(props) => props.theme.COLORS.WHITE_100};
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -12,7 +12,7 @@ export const Container = styled.View`
 export const GeneralBalance = styled.View`
     width: 85%;
     height: 80px;
-    background-color: #fff;
+    background-color: ${(props) => props.theme.COLORS.WHITE };
     justify-content: space-between;
     align-content: center;
     flex-direction: row;
@@ -28,9 +28,10 @@ export const MoneyAmountContainer = styled.View`
 
 export const Title = styled.Text`
     font-size: 17px;
-    color: grey;
+    color: ${(props) => props.theme.COLORS.GRAY_700};
     margin-top: 5px;
     margin-bottom: 5px;
+    padding-top: 5px;
 `
 
 export const Balance = styled.Text`
