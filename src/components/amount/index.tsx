@@ -11,6 +11,8 @@ import {
   Title,
 } from "./styles";
 
+import { Divider } from "@components/divider";
+
 type IconName = "eye" | "eye-off";
 
 export function Amount() {

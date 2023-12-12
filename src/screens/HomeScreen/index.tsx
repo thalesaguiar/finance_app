@@ -1,16 +1,11 @@
 import React from "react";
-import {
-  View,
-  StyleSheet,
-  ScrollView,
-  StatusBar,
-} from "react-native";
+import { View, StyleSheet, ScrollView, StatusBar } from "react-native";
 import { ProfileStats } from "@components/profile-status";
 import { Amount } from "@components/amount";
-import { BankAcounts } from "@components/bank-acounts";
+import { BankList } from "@components/BanksList";
+import { Divider } from "@components/divider";
 
 export function HomeScreen() {
-    
   return (
     <>
       <StatusBar
@@ -26,6 +21,8 @@ export function HomeScreen() {
           </View>
           <View style={styles.amountWrapper}>
             <Amount />
+            <Divider />
+            <BankList />
           </View>
         </View>
       </ScrollView>
