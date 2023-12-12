@@ -11,7 +11,8 @@ export const Container = styled.View`
 export const ContentWrapper = styled.View`
   background-color: ${theme.COLORS.WHITE};
   width: 85%;
-  margin-bottom: 100px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 `
 
 export const Title = styled.Text`
@@ -26,3 +27,7 @@ export const ContentWrapper2 = styled.View`
   width: 85%;
   height: 400px;
   `
+  export const AcountsModal = styled.Modal`
+  flex: 1;
+  background-color: ${theme.COLORS.RED_DARK};
+`
