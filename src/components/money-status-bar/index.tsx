@@ -1,9 +1,13 @@
-import { AmountStatus, Container } from "./styles";
+import { AmountStatus, Container, StatusBarTypeStyleProps } from "./styles";
 
-export function MoneyStatusBar() {
+type Props = {
+  type?: StatusBarTypeStyleProps;
+};
+
+export function MoneyStatusBar({ type = "PRIMARY", ...rest }: Props) {
   return (
     <Container>
-      <AmountStatus/>
+      <AmountStatus type="PRIMARY" {...rest} />
     </Container>
   );
 }

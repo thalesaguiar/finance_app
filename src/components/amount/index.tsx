@@ -1,16 +1,22 @@
 import { useState } from "react";
-import {Pressable, View} from "react-native";
+import { Pressable, View } from "react-native";
 import { MoneyStatusBar } from "../money-status-bar";
 import { Feather } from "@expo/vector-icons";
-import { BankAcounts } from "../bank-acounts";
-import { Balance, Container, EyeButtonWrapper, GeneralBalance, MoneyAmountContainer, Title } from "./styles";
+import {
+  Balance,
+  Container,
+  EyeButtonWrapper,
+  GeneralBalance,
+  MoneyAmountContainer,
+  Title,
+} from "./styles";
 
-type IconName = "eye"|"eye-off";
+type IconName = "eye" | "eye-off";
 
 export function Amount() {
   const [show, setShow] = useState(false);
   const [icon, setIcon] = useState<IconName>("eye");
-  const [showAmount, setShowAmount] = useState("1000,00");
+  const [showAmount, setShowAmount] = useState("0.000,00");
 
   function HandleMoneyShow() {
     const displayEye = show;
@@ -20,7 +26,7 @@ export function Amount() {
       setShowAmount("  * * * * *");
     } else {
       setIcon("eye");
-      setShowAmount("1000,00");
+      setShowAmount("");
     }
   }
   return (
@@ -29,7 +35,7 @@ export function Amount() {
         <GeneralBalance>
           <MoneyStatusBar />
           <MoneyAmountContainer>
-            <Title >Saldo Geral</Title>
+            <Title>Saldo Geral</Title>
             <Balance>R$: {showAmount}</Balance>
           </MoneyAmountContainer>
           <EyeButtonWrapper>
@@ -39,7 +45,6 @@ export function Amount() {
           </EyeButtonWrapper>
         </GeneralBalance>
       </Container>
-      <BankAcounts />
     </>
   );
 }
