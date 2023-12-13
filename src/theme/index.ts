@@ -6,7 +6,9 @@ const theme = {
 
             GREEN_700: '#00875F',
             GREEN_500: '#00B37E',
-
+            GREEN_400: '#17C74E',
+            GREEN_300:'#47C66F',
+            
             BLUE: '#788FDB',
         
             RED: '#F75A68',
@@ -28,8 +30,8 @@ const theme = {
         FONT_SIZE: {
           SM: 14,
           MD: 16,
-          LG: 18,
-          XL: 32
+          LG: 20,
+          XL: 38
         }
 
   }

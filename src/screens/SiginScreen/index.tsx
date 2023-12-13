@@ -18,14 +18,14 @@ export function SiginScreen() {
   const navigation = useNavigation();
 
   function handleLoginButton() {
-    navigation.dispatch(StackActions.replace("HomeScreen"));
+    navigation.navigate("HomeScreen");
   }
 
   return (
     <Container>
       <WrapperContent>
         <Header>
-          <GoBackButton />
+          <GoBackButton onPress={() => navigation.navigate("Login")} />
           <LogoImg source={Pigimg} />
         </Header>
 

@@ -1,27 +1,17 @@
 import React, { useState } from "react";
-import {
-  View,
-  StyleSheet,
-  ScrollView,
-  StatusBar,
-  Text,
-  Pressable,
-  TouchableOpacity,
-} from "react-native";
+import { View, StyleSheet, ScrollView, StatusBar } from "react-native";
 import { ProfileStats } from "@components/profile-status";
 import { Amount } from "@components/amount";
 import { BankList } from "@components/BanksList";
 import { Divider } from "@components/divider";
-import { NoColorButton } from "@components/NoColorButton";
-import Modal from "react-native-modal";
-import { Button } from "@components/Button";
+import { theme } from "../../theme";
 
 export function HomeScreen() {
   return (
     <>
       <StatusBar
         barStyle="light-content"
-        backgroundColor="#17C74E"
+        backgroundColor={`${theme.COLORS.GREEN_500}`}
         translucent
       />
 

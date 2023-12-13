@@ -1,16 +1,15 @@
 import { Container, BackIcon, BackButton } from "./styles";
-import { useNavigation } from "@react-navigation/native";
+import { TouchableOpacityProps } from "react-native";
 
-export function GoBackButton() {
-  const navigation = useNavigation();
+type Props = TouchableOpacityProps & {
+  onPress: () => void;
+};
 
-  function handleGoBack() {
-    navigation.navigate("Login");
-  }
+export function GoBackButton({ onPress }: Props) {
   return (
     <Container>
-      <BackButton onPress={handleGoBack}>
-        <BackIcon name="left" />
+      <BackButton onPress={onPress}>
+        <BackIcon name="left" color={"green"} />
       </BackButton>
     </Container>
   );

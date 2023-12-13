@@ -1,6 +1,7 @@
 import styled from 'styled-components/native'
 import { theme } from "../../theme";
 
+
 export const Container = styled.View`
   flex: 1;
   width: 100%;
@@ -22,12 +23,28 @@ export const Title = styled.Text`
   margin-top: 10px;
   margin-left: 20px;
 `
-export const ContentWrapper2 = styled.View`
-  background-color: ${theme.COLORS.WHITE};
-  width: 85%;
-  height: 400px;
-  `
-  export const AcountsModal = styled.Modal`
+
+  export const ModalContainer = styled.View`
   flex: 1;
-  background-color: ${theme.COLORS.RED_DARK};
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  background-color: ${theme.COLORS.WHITE};
+`
+
+export const BackButtonContainer = styled.View`
+  background-color: ${theme.COLORS.GREEN_400};
+  width: 100%;
+  height: 55px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row ;
+  padding: 10px;
+  `
+ 
+export const TopTitle = styled.Text`
+font-size: ${theme.FONT_SIZE.LG}px;
+font-weight: 600;
+color: ${theme.COLORS.WHITE};
+margin-right: 200px;
 `
