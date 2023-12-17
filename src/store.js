@@ -1,12 +1,8 @@
 import {create} from 'zustand';
 
-
-const useModalVisible = create((set) => ({
-  open: true,
-  
-  close: () => set((state) => ({open: state.open = false})),
+const useModalStore = create((set) => ({
+  modalVisible: false,
+  toggleModal: () => set((state) => ({ modalVisible: !state.modalVisible })),
 }));
 
-
-
-export {useModalVisible};
+export default useModalStore;

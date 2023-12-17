@@ -12,18 +12,23 @@ import {
   ComponentTitle,
   SectionWrapper,
   TextBalanceTitle,
+  BackButtonContainer,
 } from "./styles";
 import { Divider } from "@components/divider";
 import { MaterialIcons } from "@expo/vector-icons";
-import { Touchable, TouchableOpacity } from "react-native";
 import { useState } from "react";
+import { GoBackButton } from "@components/GoBackButton";
+import useModalStore from "../../store";
 
 export function BanksAddModal() {
   const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
+  const { modalVisible, toggleModal } = useModalStore();
 
   return (
     <Container>
+      <BackButtonContainer>
+        <GoBackButton onPress={toggleModal} />
+      </BackButtonContainer>
       <AcountCreator>
         <SectionWrapper>
           <ComponentTitle>Nome da conta</ComponentTitle>
@@ -49,7 +54,7 @@ export function BanksAddModal() {
           trackColor={{ false: "#d9d4dc", true: "#00B37E" }}
           thumbColor={"#f4f3f4"}
           ios_backgroundColor={"#3e3e3e"}
-          onValueChange={toggleSwitch}
+          onValueChange={setIsEnabled}
           value={isEnabled}
           style={{ transform: [{ scaleX: 1.4 }, { scaleY: 1.4 }] }}
         />
