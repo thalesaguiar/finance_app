@@ -9,11 +9,19 @@ export const Container = styled.View`
   background-color: ${theme.COLORS.WHITE_100};
 `
 
+export const BackButtonContainer = styled.View`
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+  margin-left: 20px;
+`
+
 export const AcountCreator = styled.View`
   width: 100%;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 10px;
   padding: 5px;
 `
