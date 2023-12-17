@@ -5,7 +5,7 @@ import { BANK_COLECTION } from '@storage/storageConfig';
 
 export async function bankCreate( newBank: string) {
   try {
-    
+
     const storedBanks = await banksGetAll();
 
     const bankAlreadyExists = storedBanks.includes(newBank);
@@ -15,7 +15,7 @@ export async function bankCreate( newBank: string) {
     }
 
     const storage = JSON.stringify([...storedBanks, newBank])
-    await AsyncStorage.setItem(BANK_COLECTION, storage);
+    await AsyncStorage.setItem(BANK_COLECTION, storage); //chave e valor
   }catch(error) {
     throw(error);
   }

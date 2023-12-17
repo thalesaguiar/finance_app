@@ -13,7 +13,7 @@ export const FormEmailInput = styled.TextInput`
   border-color: ${(props) => props.theme.COLORS.GRAY_200};
   border-radius: 10px;
   padding: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 `
 
 export const FormPasswordInput = styled.TextInput`

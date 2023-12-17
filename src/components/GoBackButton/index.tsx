@@ -9,7 +9,7 @@ export function GoBackButton({ onPress }: Props) {
   return (
     <Container>
       <BackButton onPress={onPress}>
-        <BackIcon name="left" color={"green"} />
+        <BackIcon name="left" />
       </BackButton>
     </Container>
   );

@@ -19,10 +19,11 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { useState } from "react";
 import { GoBackButton } from "@components/GoBackButton";
 import useModalStore from "../../store";
+import { SubmitButton } from "@components/SubmitButton";
 
 export function BanksAddModal() {
   const [isEnabled, setIsEnabled] = useState(false);
-  const { modalVisible, toggleModal } = useModalStore();
+  const { toggleModal } = useModalStore();
 
   return (
     <Container>
@@ -59,6 +60,8 @@ export function BanksAddModal() {
           style={{ transform: [{ scaleX: 1.4 }, { scaleY: 1.4 }] }}
         />
       </HideBalanceWrapper>
+
+      <SubmitButton />
     </Container>
   );
 }
