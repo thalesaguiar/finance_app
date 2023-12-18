@@ -20,10 +20,44 @@ import { useState } from "react";
 import { GoBackButton } from "@components/GoBackButton";
 import useModalStore from "../../store";
 import { SubmitButton } from "@components/SubmitButton";
+import { bankCreate } from "@storage/bank/bankCreate";
+import { Alert } from "react-native";
+import { AppError } from "@utils/AppError";
 
 export function BanksAddModal() {
   const [isEnabled, setIsEnabled] = useState(false);
   const { toggleModal } = useModalStore();
+  const [bank, setBank] = useState("");
+
+  async function handleNew() {
+    try {
+      if (bank.trim().length === 0) {
+        return Alert.alert("Novo Banco", "Informe o nome do banco");
+      }
+      await bankCreate(bank);
+      return true;
+    } catch (error) {
+      if (error instanceof AppError) {
+        Alert.alert("Novo Banco", error.message);
+      } else {
+        Alert.alert(
+          "Novo Banco",
+          "Não foi possível adicionar uma nova conta de banco"
+        );
+      }
+    }
+  }
+
+  async function SubmitBankAndClose() {
+    {
+      handleNew();
+    }
+    if (await handleNew()) {
+      {
+        toggleModal();
+      }
+    }
+  }
 
   return (
     <Container>
@@ -35,7 +69,10 @@ export function BanksAddModal() {
           <ComponentTitle>Nome da conta</ComponentTitle>
         </SectionWrapper>
         <FormWrapper>
-          <FormInput placeholder="Digite nome da conta" />
+          <FormInput
+            placeholder="Digite nome da conta"
+            onChangeText={setBank}
+          />
         </FormWrapper>
         <Divider />
         <SectionWrapper>
@@ -61,7 +98,7 @@ export function BanksAddModal() {
         />
       </HideBalanceWrapper>
 
-      <SubmitButton />
+      <SubmitButton onPress={SubmitBankAndClose} />
     </Container>
   );
 }

@@ -1,9 +1,14 @@
+import { TouchableOpacityProps } from "react-native";
 import { Container, RoundSubmitButton, Icon } from "./styles";
 
-export function SubmitButton() {
+type Props = {
+  onPress: () => void;
+} & TouchableOpacityProps;
+
+export function SubmitButton({ ...rest }: Props) {
   return (
     <Container>
-      <RoundSubmitButton>
+      <RoundSubmitButton {...rest}>
         <Icon name="check" />
       </RoundSubmitButton>
     </Container>
