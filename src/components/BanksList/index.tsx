@@ -1,4 +1,7 @@
 import { Button, FlatList, ScrollView, StyleSheet, Text } from "react-native";
+import { SafeAreaView } from "react-native";
+import { useState, useCallback, useEffect } from "react";
+
 import {
   Container,
   ContentWrapper,
@@ -7,31 +10,22 @@ import {
   BackButtonContainer,
   TopTitle,
 } from "./styles";
+import { theme } from "../../theme";
+
 import { NoColorButton } from "@components/NoColorButton";
-import { useState } from "react";
 import { ReactNativeModal } from "react-native-modal";
 import { GoBackButton } from "@components/GoBackButton";
-import { SafeAreaView } from "react-native";
 import { ButtonIcon } from "@components/ButtonAdd";
-import { theme } from "../../theme";
+
 import { BanksAddModal } from "@components/BanksAddModal";
 import useModalStore from "../../store";
+import { banksGetAll } from "@storage/bank/bankGetAll";
+import { BankCard } from "@components/BankCard";
 
 export function BankList() {
   const [modalAVisible, setModalAVisible] = useState(false);
   const { modalVisible, toggleModal } = useModalStore();
-
-  const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      paddingTop: 22,
-    },
-    item: {
-      padding: 10,
-      fontSize: 18,
-      height: 44,
-    },
-  });
+  const [banks, setBanks] = useState<string[]>([]);
 
   function onPressHandle() {
     setModalAVisible(!modalAVisible);
@@ -40,6 +34,22 @@ export function BankList() {
   function onPressHandleGoB() {
     toggleModal(modalVisible);
   }
+
+  async function fetchBanks() {
+    try {
+      const data = await banksGetAll();
+      setBanks(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    if (!modalVisible) {
+      fetchBanks();
+      console.log("useEffect Executou");
+    }
+  }, [modalVisible]);
 
   return (
     <>
@@ -68,23 +78,30 @@ export function BankList() {
                 />
               </BackButtonContainer>
               <Text>Modal 1</Text>
+              <FlatList
+                data={banks}
+                keyExtractor={(item) => item}
+                style={{ width: "100%" }}
+                renderItem={({ item }) => (
+                  <BankCard title={item} onPress={() => console.log("abrir")} />
+                )}
+                contentContainerStyle={banks.length === 0 && { flex: 1 }}
+                showsHorizontalScrollIndicator={false}
+              />
             </ModalContainer>
           </ReactNativeModal>
+
           <ContentWrapper>
             <Title>Minhas Contas</Title>
             <FlatList
-              scrollEnabled={false}
-              data={[
-                { key: "Nubank" },
-                { key: "Banco do Brasil" },
-                { key: "Caixa" },
-                { key: "PicPay" },
-                { key: "Cofre" },
-                { key: "Inter" },
-              ]}
+              data={banks}
+              keyExtractor={(item) => item}
               renderItem={({ item }) => (
-                <Text style={styles.item}>{item.key}</Text>
+                <BankCard title={item} onPress={() => console.log("abrir")} />
               )}
+              contentContainerStyle={banks.length === 0 && { flex: 1 }}
+              showsHorizontalScrollIndicator={false}
+              scrollEnabled={false}
               ListFooterComponent={
                 <NoColorButton
                   onPress={() => setModalAVisible(!modalAVisible)}
