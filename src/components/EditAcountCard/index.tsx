@@ -7,6 +7,7 @@ import {
   BankAcountWrapper,
   AmountWrapper,
 } from "./styles";
+import { useEffect } from "react";
 
 type Props = {
   title: string;
@@ -14,6 +15,10 @@ type Props = {
 };
 
 export function EditAcountCard({ title, currentBalance }: Props) {
+  useEffect(() => {
+    console.log(title, currentBalance);
+  }, [title, currentBalance]);
+
   return (
     <Container>
       <BankAcountWrapper>
