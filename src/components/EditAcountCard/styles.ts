@@ -1,14 +1,13 @@
 import styled from "styled-components/native";
 import {theme} from '../../theme';
 export const Container = styled.View`
-  flex: 1;
-  width: 100%;
+  flex: 1; 
   height: 130px;
+  margin-bottom: 20px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 20px;
-
+  background-color: green;
 `
 
 export const BankAcountWrapper= styled.View`
@@ -25,8 +24,6 @@ export const AmountWrapper= styled.View`
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-
-
   background-color: ${theme.COLORS.WHITE};
   border-radius: 10px;
 `

@@ -6,7 +6,6 @@ import {
   WrapperContent,
   Header,
 } from "./styles";
-import { SafeAreaView } from "react-native-safe-area-context";
 import Pigimg from "@assets/pig2.png";
 import {} from "@components/Form/styles";
 import { Form } from "@components/Form";

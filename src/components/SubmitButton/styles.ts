@@ -5,23 +5,22 @@ import { MaterialIcons } from '@expo/vector-icons';
 export const Container = styled.View`
   flex: 1;
   width: 100%;
-  min-height: 100%;
-  max-height: 100%;
+
   justify-content: center;
   align-items: center;
 `
 
 export const RoundSubmitButton = styled.TouchableOpacity`
-  width: 25%;
-  min-height: 100px;
-  max-height: 100px;
+  width: 20%;
+  min-height: 80px;
+  max-height: 80px;
   background-color: ${theme.COLORS.GREEN_400};
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   border-radius: 50px;
   justify-content: center;
   align-items: center;
 `
 export const Icon = styled(MaterialIcons).attrs(({ theme}) => ({
-  size: 45,
+  size: 40,
   color: theme.COLORS.WHITE
 }))``;

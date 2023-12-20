@@ -16,7 +16,7 @@ type IconName = "eye" | "eye-off";
 export function Amount() {
   const [show, setShow] = useState(false);
   const [icon, setIcon] = useState<IconName>("eye");
-  const [showAmount, setShowAmount] = useState("0.000,00");
+  const [showAmount, setShowAmount] = useState("");
 
   function HandleMoneyShow() {
     const displayEye = show;

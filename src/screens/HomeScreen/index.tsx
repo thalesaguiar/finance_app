@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { View, StyleSheet, ScrollView, StatusBar } from "react-native";
 import { ProfileStats } from "@components/profile-status";
 import { Amount } from "@components/amount";
-import { BankList } from "@components/BanksList";
+import { BanksList } from "@components/BankList";
 import { Divider } from "@components/divider";
 import { theme } from "../../theme";
+import { useNavigation } from "@react-navigation/native";
 
 export function HomeScreen() {
+  const navigation = useNavigation();
+
   return (
     <>
       <StatusBar
@@ -16,16 +19,12 @@ export function HomeScreen() {
       />
 
       <ScrollView style={styles.container}>
-        <View>
-          <View style={styles.profile}>
-            <ProfileStats />
-          </View>
-          <View style={styles.amountWrapper}>
-            <Amount />
-            <Divider />
-            <BankList />
-          </View>
+        <View style={styles.profile}>
+          <ProfileStats />
         </View>
+        <Amount />
+        <Divider />
+        <BanksList />
       </ScrollView>
     </>
   );
@@ -52,8 +51,6 @@ const styles = StyleSheet.create({
     marginRight: 50,
   },
   amountWrapper: {
-    position: "relative",
-    bottom: 10,
-    zIndex: 100,
+    width: "100%",
   },
 });
