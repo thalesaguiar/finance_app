@@ -1,3 +1,3 @@
-const BANK_COLECTION = '@create-user:banks';
+const BANK_COLECTION = '@finnce-app:banks';
 
 export {BANK_COLECTION};

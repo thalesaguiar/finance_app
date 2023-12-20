@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AppError } from '@utils/AppError';
 import { BANK_COLECTION } from '@storage/storageConfig';
 
-export async function bankCreate( newBank: string) {
+export async function bankCreate( newBank : string) {
   try {
 
     const storedBanks = await banksGetAll();
