@@ -4,29 +4,29 @@ import { Container } from "./styles";
 
 export function ProfileStats() {
   return (
-      <Container>
-        <View style={styles.imageTextWrapper}>
-          <TouchableOpacity>
-            <View style={styles.imageWrapper}>
-              <Image
-                source={require("@assets/user.png")}
-                style={styles.profileImage}
-              />
-            </View>
-          </TouchableOpacity>
-
-          <View style={styles.nameWrapper}>
-            <Text style={styles.profileText}>Olá,</Text>
-            <Text style={styles.profileNameText}>Thales</Text>
-          </View>
-        </View>
-
+    <Container>
+      <View style={styles.imageTextWrapper}>
         <TouchableOpacity>
-          <View style={styles.modalButtonWrapper}>
-            <Feather name={"bell"} size={35} color={"#E7F3E0"} />
+          <View style={styles.imageWrapper}>
+            <Image
+              source={require("@assets/user.png")}
+              style={styles.profileImage}
+            />
           </View>
         </TouchableOpacity>
-      </Container>
+
+        <View style={styles.nameWrapper}>
+          <Text style={styles.profileText}>Olá,</Text>
+          <Text style={styles.profileNameText}>Thales</Text>
+        </View>
+      </View>
+
+      <TouchableOpacity>
+        <View style={styles.modalButtonWrapper}>
+          <Feather name={"bell"} size={35} color={"#E7F3E0"} />
+        </View>
+      </TouchableOpacity>
+    </Container>
   );
 }
 
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginRight: 10,
-    marginLeft: 20
+    marginLeft: 20,
   },
   profileImage: {
     width: 40,
