@@ -5,6 +5,8 @@ export declare global {
       HomeScreen: undefined;
       SigIn: undefined;
       CreateAcount: undefined;
+      AcountLists: undefined;
+      AddBanks: undefined;
     }
   }
 }
