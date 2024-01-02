@@ -30,7 +30,6 @@ export function Amount() {
     }
   }
   return (
-    <>
       <Container>
         <GeneralBalance>
           <MoneyStatusBar />
@@ -45,6 +44,5 @@ export function Amount() {
           </EyeButtonWrapper>
         </GeneralBalance>
       </Container>
-    </>
   );
 }

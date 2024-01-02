@@ -22,7 +22,7 @@ import { GoBackButton } from "@components/GoBackButton";
 import useModalStore from "../../store";
 import { SubmitButton } from "@components/SubmitButton";
 import { bankCreate } from "@storage/bank/bankCreate";
-import { Alert } from "react-native";
+import { Alert, Platform, StatusBar } from "react-native";
 import { AppError } from "@utils/AppError";
 import { useNavigation } from "@react-navigation/native";
 
@@ -50,7 +50,7 @@ export function BanksAddModal() {
     }
   }
   return (
-    <Container>
+    <Container style={{paddingTop: Platform.OS === "android" ? 29 : 0}}>
       <BackButtonContainer>
         <GoBackButton onPress={() => navigation.navigate("AcountLists")} />
       </BackButtonContainer>

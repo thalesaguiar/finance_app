@@ -4,7 +4,7 @@ import {theme} from '../../theme';
 export const Container = styled.SafeAreaView`
   flex: 1;
   background-color:${theme.COLORS.WHITE_100};
-  justify-content: flex-start;
+  justify-content: center;
 `
 
 export const NavigationTab = styled.View`
@@ -15,9 +15,7 @@ export const NavigationTab = styled.View`
   background-color: ${theme.COLORS.GREEN_400};
   justify-content: space-between;
   align-items: center;
-
   padding: 10px;
-  margin-top: 23px;
 `
 
 export const Text = styled.Text`

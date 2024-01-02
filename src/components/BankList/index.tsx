@@ -27,7 +27,6 @@ export function BanksList() {
 
   useFocusEffect(
     useCallback(() => {
-      console.log("use Focus exec");
       fetchBanks();
     }, [])
   );

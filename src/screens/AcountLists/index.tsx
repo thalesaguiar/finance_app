@@ -2,7 +2,7 @@ import { Container, NavigationTab, Text } from "./styles";
 import { GoBackButton } from "@components/GoBackButton";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import { ButtonIcon } from "@components/ButtonAdd";
-import { ScrollView, View } from "react-native";
+import { Platform, SafeAreaView, ScrollView, StatusBar, View } from "react-native";
 import { useState, useCallback } from "react";
 import { banksGetAll } from "@storage/bank/bankGetAll";
 import { BankCard } from "@components/BankCard";

@@ -1,7 +1,6 @@
 import styled from "styled-components/native";
 import {theme} from '../../theme';
 export const Container = styled.View`
-  flex: 1;
   width: 100%;
   background-color: ${theme.COLORS.WHITE_100};
   justify-content: center;
@@ -38,4 +37,5 @@ export const ButtonWrapper = styled.View`
   background-color: ${theme.COLORS.WHITE};
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+  margin-bottom: 50px;
 `
