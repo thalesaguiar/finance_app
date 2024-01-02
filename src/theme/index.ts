@@ -6,7 +6,7 @@ const theme = {
 
             GREEN_700: '#00875F',
             GREEN_500: '#00B37E',
-            GREEN_400: '#17C74E',
+            GREEN_400: '#17c64f',
             GREEN_300:'#47C66F',
             
             BLUE: '#788FDB',
