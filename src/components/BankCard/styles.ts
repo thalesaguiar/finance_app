@@ -9,23 +9,41 @@ export const Container = styled(TouchableOpacity)`
   background-color: ${theme.COLORS.WHITE};
   border-radius: 5px;
 
-  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-
+  justify-content: flex-start;
   padding: 24px;
-`;
+`
 
 export const Title = styled.Text`
   color: ${theme.COLORS.GRAY_500};
   font-size: ${theme.FONT_SIZE.MD}px;
-`;
+  margin-left: 10px;
+`
 
 export const Amount = styled.Text`
   color: ${theme.COLORS.BLUE};
-  font-size: ${theme.FONT_SIZE.SM}px;
-`;
+  font-size: ${theme.FONT_SIZE.MD}px;
+  margin-left: 10px;
+  margin-right: 50%;
+`
 
+export const AmountWrapper = styled.View`
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
+`
 
+export const BankStatsWrapper = styled.View`
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+`
+
+export const Text = styled.Text`
+  font-size: 16px;
+`
 
 
