@@ -13,7 +13,8 @@ export const BackButtonContainer = styled.View`
   width: 100%;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 40px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   margin-left: 20px;
 `
 

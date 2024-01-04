@@ -22,3 +22,8 @@ export const Text = styled.Text`
   color: ${theme.COLORS.WHITE};
   font-size: ${theme.FONT_SIZE.LG}px;
 `
+
+export const AmountWrapper = styled.View`
+  justify-content: space-between;
+  align-items: center;
+`

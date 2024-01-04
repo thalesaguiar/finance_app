@@ -8,7 +8,7 @@ export const Container = styled.View`
 
 export const Content = styled.View`
     width: 85%;
-    height: 1px;
+    height: 1.5px;
     background-color: gray;
     opacity: 0.1;
 `

@@ -3,16 +3,13 @@ import { GoBackButton } from "@components/GoBackButton";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import { ButtonIcon } from "@components/ButtonAdd";
 import {
-  Platform,
-  SafeAreaView,
   ScrollView,
-  StatusBar,
   View,
 } from "react-native";
 import { useState, useCallback } from "react";
 import { banksGetAll } from "@storage/bank/bankGetAll";
 import { BankCard } from "@components/BankCard";
-
+import {AntDesign} from '@expo/vector-icons'
 export function BankList() {
   const navigation = useNavigation();
   const [banks, setBanks] = useState<string[]>([]);
@@ -27,7 +24,6 @@ export function BankList() {
   }
   useFocusEffect(
     useCallback(() => {
-      console.log("useFocus executou");
       fetchBanks();
     }, [])
   );
@@ -61,7 +57,7 @@ export function BankList() {
               marginTop: 20,
             }}
           >
-            <BankCard title={item} amount={""} />
+            <BankCard title={item} amount={""} goTo={() => (console.log)} /> 
           </View>
         ))}
       </ScrollView>

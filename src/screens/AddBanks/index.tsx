@@ -50,10 +50,11 @@ export function BanksAddModal() {
     }
   }
   return (
-    <Container style={{paddingTop: Platform.OS === "android" ? 29 : 0}}>
+    <Container>
       <BackButtonContainer>
         <GoBackButton onPress={() => navigation.navigate("AcountLists")} />
       </BackButtonContainer>
+      <Divider/>
       <AcountCreator>
         <SectionWrapper>
           <ComponentTitle>Nome da conta</ComponentTitle>
