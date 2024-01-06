@@ -11,12 +11,12 @@ export async function bankCreate( newBank : string) {
     const bankAlreadyExists = storedBanks.includes(newBank);
 
     if(bankAlreadyExists) {
-      throw new AppError('Já existe uma conta no banco cadastrada desse banco.')
+      throw new Error("Usuário tentou adicionar uma conta que já existe");
     }
+      const storage = JSON.stringify([...storedBanks, newBank])
+      await AsyncStorage.setItem(BANK_COLECTION, storage); //chave e valor
 
-    const storage = JSON.stringify([...storedBanks, newBank])
-    await AsyncStorage.setItem(BANK_COLECTION, storage); //chave e valor
-  }catch(error) {
-    throw(error);
+  }catch (error) {
+    throw error;
   }
 }

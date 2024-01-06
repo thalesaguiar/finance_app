@@ -37,5 +37,5 @@ export const ButtonWrapper = styled.View`
   background-color: ${theme.COLORS.WHITE};
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 `

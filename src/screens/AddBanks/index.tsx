@@ -30,25 +30,21 @@ export function BanksAddModal() {
   const [isEnabled, setIsEnabled] = useState(false);
   const [bank, setBank] = useState("");
   const navigation = useNavigation();
-
+  
   async function handleNew() {
     try {
-      if (bank.trim().length === 0) {
-        Alert.alert("Novo Banco", "Informe o nome do banco");
-      }
       await bankCreate(bank);
-      return true;
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  async function saveBank() {
-    if (await handleNew()) {
-      handleNew();
       navigation.navigate("AcountLists");
+    } catch (error) {
+        Alert.alert('Novo Banco', 'Já existe um banco com esse nome')
     }
   }
+  // async function saveBank() {
+  //   if (await handleNew()) {
+  //     handleNew();
+  //     navigation.navigate("AcountLists");
+  //   }
+  // }
   return (
     <Container>
       <BackButtonContainer>
@@ -89,7 +85,7 @@ export function BanksAddModal() {
         />
       </HideBalanceWrapper>
       <SubmitButtonWrapper>
-        <SubmitButton onPress={() => saveBank()} />
+        <SubmitButton onPress={() => handleNew()} />
       </SubmitButtonWrapper>
     </Container>
   );
