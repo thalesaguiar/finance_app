@@ -2,15 +2,11 @@ import styled from "styled-components/native";
 import { Pressable, TouchableOpacity } from 'react-native';
 import {theme} from '../../theme'
 
-export const Container = styled(TouchableOpacity)`
-  flex: 1;
-  
-  background-color: ${theme.COLORS.WHITE};
+export const Container = styled(TouchableOpacity)`  
   width: 100%;
   min-height: 45px;
   max-height: 45px;
   margin-top: 20px;
-  margin-bottom: 20px;
   justify-content: center;
   align-items: center;
 `

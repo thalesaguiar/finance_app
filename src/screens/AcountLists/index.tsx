@@ -55,9 +55,10 @@ export function BankList() {
               justifyContent: "center",
               alignItems: "center",
               marginTop: 20,
+
             }}
           >
-            <BankCard title={item} amount={""} goTo={() => (console.log)} /> 
+            <BankCard title={item} amount={""} /> 
           </View>
         ))}
       </ScrollView>

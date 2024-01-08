@@ -36,17 +36,11 @@ export function BanksList() {
       <BanksWrapper>
         <Text>Minhas Contas</Text>
       </BanksWrapper>
-      {banks.map((item) => (
+      {banks.slice(0,4).map((item) => (
         <WrapBankComponent>
           <Text>{item}</Text>
         </WrapBankComponent>
       ))}
-      <ButtonWrapper>
-        <NoColorButton
-          title="Gerenciar Contas"
-          onPress={() => navigation.navigate("AcountLists")}
-        />
-      </ButtonWrapper>
     </Container>
   );
 }

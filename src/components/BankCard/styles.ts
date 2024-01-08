@@ -2,7 +2,7 @@ import { TouchableOpacity } from 'react-native';
 import {styled, css} from 'styled-components/native';
 import {theme} from '../../theme';
 
-export const Container = styled(TouchableOpacity)`
+export const Container = styled.View`
   width: 90%;
   height: 120px;
 
@@ -38,7 +38,7 @@ export const AmountWrapper = styled.View`
 export const BankStatsWrapper = styled.View`
   width: 100%;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: space-between;
   margin-bottom: 20px;
 `
 
@@ -46,4 +46,12 @@ export const Text = styled.Text`
   font-size: 16px;
 `
 
+export const SkipButton = styled(TouchableOpacity)`
+  justify-content: center;
+  margin-right: 12px;
+`
+
+export const BankInfo = styled.View`
+  flex-direction: row;
+`
 
