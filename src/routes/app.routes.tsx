@@ -5,6 +5,7 @@ import { Login } from "@screens/Login/Login";
 import { CreateAcount } from "@screens/CreateAcountScreen";
 import { BankList } from "@screens/AcountLists/";
 import { BanksAddModal } from "@screens/AddBanks";
+import { EditBanks } from "@screens/EditBanksScreen";
 const { Navigator, Screen } = createNativeStackNavigator();
 
 export function AppRoutes() {
@@ -21,6 +22,8 @@ export function AppRoutes() {
       <Screen name="AcountLists" component={BankList} />
 
       <Screen name="AddBanks" component={BanksAddModal} />
+
+      <Screen name="EditBanks" component={EditBanks} />
     </Navigator>
   );
 }
