@@ -36,8 +36,8 @@ export function BanksList() {
       <BanksWrapper>
         <Text>Minhas Contas</Text>
       </BanksWrapper>
-      {banks.slice(0,4).map((item) => (
-        <WrapBankComponent>
+      {banks.map((item, index) => (
+        <WrapBankComponent key={index}>
           <Text>{item}</Text>
         </WrapBankComponent>
       ))}
