@@ -16,12 +16,14 @@ import { Divider } from "@components/divider";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useState } from "react";
 import { GoBackButton } from "@components/GoBackButton";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
 
-export function EditBanks() {
+export function EditBanks({ route }: any) {
   const [isEnabled, setIsEnabled] = useState(false);
   const navigation = useNavigation();
+
+  const { bankName } = route.params;
 
   return (
     <Container>
@@ -38,6 +40,7 @@ export function EditBanks() {
       <AcountCreator>
         <SectionWrapper>
           <ComponentTitle>Nome da conta</ComponentTitle>
+          <ComponentTitle>{bankName}</ComponentTitle>
         </SectionWrapper>
         <Divider />
         <SectionWrapper>

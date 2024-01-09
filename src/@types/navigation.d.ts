@@ -7,7 +7,9 @@ export declare global {
       CreateAcount: undefined;
       AcountLists: undefined;
       AddBanks: undefined;
-      EditBanks: undefined;
+      EditBanks: {
+        bankName: string;
+      };
     }
   }
 }
