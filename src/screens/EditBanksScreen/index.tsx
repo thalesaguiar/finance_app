@@ -11,19 +11,44 @@ import {
   BackButtonContainer,
   BackButtonWrapper,
   ScreenTitle,
+  BankName,
 } from "./styles";
 import { Divider } from "@components/divider";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useState } from "react";
 import { GoBackButton } from "@components/GoBackButton";
 import { useNavigation, useRoute } from "@react-navigation/native";
-import { TouchableOpacity } from "react-native";
+import { Alert, TouchableOpacity } from "react-native";
+import { bankRemoveByName } from "@storage/bank/bankRemoveByName";
 
 export function EditBanks({ route }: any) {
   const [isEnabled, setIsEnabled] = useState(false);
   const navigation = useNavigation();
-
   const { bankName } = route.params;
+
+  async function bankRemove() {
+    try {
+      await bankRemoveByName(bankName);
+      console.log("BankRemove");
+      navigation.navigate("AcountLists");
+    } catch (error) {
+      console.log(error);
+      Alert.alert("Remover Banco", "Não foi possível remover este banco");
+    }
+  }
+
+  async function handleBankRemove() {
+    Alert.alert("Remover", "Deseja remover o Banco?", [
+      {
+        text: "Não",
+        style: "cancel",
+      },
+      {
+        text: "Sim",
+        onPress: () => bankRemove(),
+      },
+    ]);
+  }
 
   return (
     <Container>
@@ -32,7 +57,7 @@ export function EditBanks({ route }: any) {
           <GoBackButton onPress={() => navigation.navigate("AcountLists")} />
           <ScreenTitle>Editar conta</ScreenTitle>
         </BackButtonWrapper>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handleBankRemove}>
           <MaterialIcons name="delete" size={30} color={"red"} />
         </TouchableOpacity>
       </BackButtonContainer>
@@ -40,7 +65,7 @@ export function EditBanks({ route }: any) {
       <AcountCreator>
         <SectionWrapper>
           <ComponentTitle>Nome da conta</ComponentTitle>
-          <ComponentTitle>{bankName}</ComponentTitle>
+          <BankName>{bankName}</BankName>
         </SectionWrapper>
         <Divider />
         <SectionWrapper>

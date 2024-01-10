@@ -31,7 +31,7 @@ const theme = {
           SM: 14,
           MD: 16,
           LG: 20,
-          XL: 38
+          XL: 28
         }
 
   }

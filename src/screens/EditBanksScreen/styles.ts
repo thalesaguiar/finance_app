@@ -18,6 +18,10 @@ export const BackButtonContainer = styled.View`
   margin-bottom: 10px;
   padding: 10px;
 `
+export const BankName = styled.Text`
+  font-size: ${theme.FONT_SIZE.XL}px;
+  margin: 10px;
+`
 
 export const BackButtonWrapper = styled.View`
   justify-content: center;
@@ -63,7 +67,6 @@ export const TextBalanceTitle = styled.Text`
 `
 
 export const SwitchButton = styled.Switch`
-  
 `
 
 export const ComponentTitle = styled.Text`
