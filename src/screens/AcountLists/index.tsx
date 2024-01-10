@@ -10,17 +10,11 @@ import { BankCard } from "@components/BankCard";
 export function BankList() {
   const navigation = useNavigation();
   const [banks, setBanks] = useState<string[]>([]);
-  const [data, setData] = useState(0);
   const [index, setIndex] = useState(0);
-  // console.log("data", data);
-
-  let acountId: number = Number(banks[data]);
-  console.log("banks", data);
 
   function saveData(bankName: string) {
     console.log("bankName function", bankName);
     navigation.navigate("EditBanks", { bankName });
-    // console.log({ acountId });
   }
   async function fetchBanks() {
     try {
