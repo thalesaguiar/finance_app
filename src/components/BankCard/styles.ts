@@ -29,7 +29,7 @@ export const Amount = styled.Text`
 
 export const AmountWrapper = styled.View`
   width: 100%;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
   margin-top: 20px;
