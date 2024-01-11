@@ -15,7 +15,7 @@ import {
   BackButtonContainer,
   SubmitButtonWrapper,
 } from "./styles";
-import { Divider } from "@components/divider";
+import { Divider } from "@components/Divider";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useState } from "react";
 import { GoBackButton } from "@components/GoBackButton";
@@ -30,13 +30,13 @@ export function BanksAddModal() {
   const [isEnabled, setIsEnabled] = useState(false);
   const [bank, setBank] = useState("");
   const navigation = useNavigation();
-  
+
   async function handleNew() {
     try {
       await bankCreate(bank);
       navigation.navigate("AcountLists");
     } catch (error) {
-        Alert.alert('Novo Banco', 'Já existe um banco com esse nome')
+      Alert.alert("Novo Banco", "Já existe um banco com esse nome");
     }
   }
   // async function saveBank() {
@@ -50,7 +50,7 @@ export function BanksAddModal() {
       <BackButtonContainer>
         <GoBackButton onPress={() => navigation.navigate("AcountLists")} />
       </BackButtonContainer>
-      <Divider/>
+      <Divider />
       <AcountCreator>
         <SectionWrapper>
           <ComponentTitle>Nome da conta</ComponentTitle>

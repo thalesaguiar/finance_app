@@ -1,4 +1,4 @@
-import { Divider } from "@components/divider";
+import { Divider } from "@components/Divider";
 import {
   Container,
   BankAmount,

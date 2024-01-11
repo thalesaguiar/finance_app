@@ -3,7 +3,7 @@ import { ScrollView, StatusBar, View } from "react-native";
 import { ProfileStats } from "@components/profile-status";
 import { Amount } from "@components/amount";
 import { BanksList } from "@components/BankList";
-import { Divider } from "@components/divider";
+import { Divider } from "@components/Divider";
 import { useNavigation } from "@react-navigation/native";
 import { Container } from "./styles";
 import { NoColorButton } from "@components/NoColorButton";

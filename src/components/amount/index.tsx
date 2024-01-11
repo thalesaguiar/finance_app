@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Pressable, View } from "react-native";
-import { MoneyStatusBar } from "../money-status-bar";
+import { MoneyStatusBar } from "../MoneyStatusBar";
 import { Feather } from "@expo/vector-icons";
 import {
   Balance,
@@ -30,19 +30,19 @@ export function Amount() {
     }
   }
   return (
-      <Container>
-        <GeneralBalance>
-          <MoneyStatusBar />
-          <MoneyAmountContainer>
-            <Title>Saldo Geral</Title>
-            <Balance>R$: {showAmount}</Balance>
-          </MoneyAmountContainer>
-          <EyeButtonWrapper>
-            <Pressable onPress={HandleMoneyShow}>
-              <Feather name={icon} size={35} color={"black"} />
-            </Pressable>
-          </EyeButtonWrapper>
-        </GeneralBalance>
-      </Container>
+    <Container>
+      <GeneralBalance>
+        <MoneyStatusBar />
+        <MoneyAmountContainer>
+          <Title>Saldo Geral</Title>
+          <Balance>R$: {showAmount}</Balance>
+        </MoneyAmountContainer>
+        <EyeButtonWrapper>
+          <Pressable onPress={HandleMoneyShow}>
+            <Feather name={icon} size={35} color={"black"} />
+          </Pressable>
+        </EyeButtonWrapper>
+      </GeneralBalance>
+    </Container>
   );
 }

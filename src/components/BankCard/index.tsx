@@ -11,15 +11,16 @@ import {
 import { TouchableOpacity, TouchableOpacityProps, View } from "react-native";
 import { MaterialIcons, FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { Divider } from "@components/divider";
+import { Divider } from "@components/Divider";
 import { useState } from "react";
 type Props = TouchableOpacityProps & {
   title: string;
   amount: string;
   goTo: () => void;
+  openModal: () => void;
 };
 
-export function BankCard({ title, amount, goTo }: Props) {
+export function BankCard({ title, amount, goTo, openModal }: Props) {
   return (
     <Container>
       <BankStatsWrapper>
@@ -35,7 +36,7 @@ export function BankCard({ title, amount, goTo }: Props) {
       <AmountWrapper>
         <Text>Seu balanço</Text>
         <Amount>R$ {0}</Amount>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={openModal}>
           <FontAwesome name="pencil" size={18} />
         </TouchableOpacity>
       </AmountWrapper>

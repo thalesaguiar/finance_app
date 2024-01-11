@@ -13,7 +13,7 @@ import {
   ScreenTitle,
   BankName,
 } from "./styles";
-import { Divider } from "@components/divider";
+import { Divider } from "@components/Divider";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useState } from "react";
 import { GoBackButton } from "@components/GoBackButton";

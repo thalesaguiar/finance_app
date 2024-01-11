@@ -10,7 +10,7 @@ import { banksGetAll } from "@storage/bank/bankGetAll";
 import { useFocusEffect } from "@react-navigation/native";
 import { NoColorButton } from "@components/NoColorButton";
 import { useNavigation } from "@react-navigation/native";
-import { Divider } from "@components/divider";
+import { Divider } from "@components/Divider";
 import { ScrollView } from "react-native";
 
 export function BanksList() {
