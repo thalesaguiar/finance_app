@@ -8,10 +8,9 @@ import {
 } from "./styles";
 import { banksGetAll } from "@storage/bank/bankGetAll";
 import { useFocusEffect } from "@react-navigation/native";
-import { NoColorButton } from "@components/NoColorButton";
 import { useNavigation } from "@react-navigation/native";
 import { Divider } from "@components/Divider";
-import { ScrollView } from "react-native";
+import { NoColorButton } from "@components/NoColorButton";
 
 export function BanksList() {
   const navigation = useNavigation();

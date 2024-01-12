@@ -29,14 +29,12 @@ export function EditBanks({ route }: any) {
   async function bankRemove() {
     try {
       await bankRemoveByName(bankName);
-      console.log("BankRemove");
       navigation.navigate("AcountLists");
     } catch (error) {
       console.log(error);
       Alert.alert("Remover Banco", "Não foi possível remover este banco");
     }
   }
-
   async function handleBankRemove() {
     Alert.alert("Remover", "Deseja remover o Banco?", [
       {

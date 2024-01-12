@@ -18,6 +18,7 @@ export const Text = styled.Text`
   font-size: ${theme.FONT_SIZE.LG}px;
   color: ${theme.COLORS.GRAY_500};
   margin-left: 20px;
+  margin-bottom: 20px;
 `
 
 export const WrapBankComponent = styled.View`

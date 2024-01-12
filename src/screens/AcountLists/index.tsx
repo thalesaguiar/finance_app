@@ -6,16 +6,19 @@ import { Modal, ScrollView, TouchableOpacity, View } from "react-native";
 import { useState, useCallback } from "react";
 import { banksGetAll } from "@storage/bank/bankGetAll";
 import { BankCard } from "@components/BankCard";
-import { Feather } from "@expo/vector-icons";
+import { Feather, FontAwesome, MaterialIcons } from "@expo/vector-icons";
+import BankamountInput from "@components/BankAmountInput";
+import { SubmitButton } from "@components/SubmitButton";
+import { GraySubmitButton } from "@components/GraySubmitButton";
 
 export function BankList() {
   const navigation = useNavigation();
   const [banks, setBanks] = useState<string[]>([]);
   const [index, setIndex] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
+  const [bankNameModal, setBankNameModal] = useState("");
 
   function saveData(bankName: string) {
-    console.log("bankName function", bankName);
     navigation.navigate("EditBanks", { bankName });
   }
   async function fetchBanks() {
@@ -27,6 +30,7 @@ export function BankList() {
       console.log(error);
     }
   }
+
   useFocusEffect(
     useCallback(() => {
       fetchBanks();
@@ -52,32 +56,30 @@ export function BankList() {
           marginBottom: 20,
         }}
       >
-        {banks.map(
-          (item, index) => (
-            console.log(`index`, index),
-            (
-              <View
-                key={item}
-                style={{
-                  flex: 1,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  marginTop: 20,
-                }}
-              >
-                <BankCard
-                  title={item}
-                  amount={""}
-                  goTo={() => {
-                    setIndex(index);
-                    saveData(item);
-                  }}
-                  openModal={() => setModalVisible(true)}
-                />
-              </View>
-            )
-          )
-        )}
+        {banks.map((item, index) => (
+          <View
+            key={item}
+            style={{
+              flex: 1,
+              justifyContent: "center",
+              alignItems: "center",
+              marginTop: 20,
+            }}
+          >
+            <BankCard
+              title={item}
+              amount={""}
+              goTo={() => {
+                setIndex(index);
+                saveData(item);
+              }}
+              openModal={() => {
+                setModalVisible(true);
+                setBankNameModal(item);
+              }}
+            />
+          </View>
+        ))}
       </ScrollView>
       <Modal
         animationType="fade"
@@ -93,7 +95,7 @@ export function BankList() {
             height: "100%",
             justifyContent: "center",
             alignItems: "center",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
           }}
         >
           <View
@@ -105,9 +107,36 @@ export function BankList() {
               borderRadius: 12,
             }}
           >
-            <TouchableOpacity onPress={() => setModalVisible(false)}>
+            <TouchableOpacity
+              onPress={() => setModalVisible(false)}
+              style={{ alignItems: "flex-end" }}
+            >
               <Feather name="x" size={20} />
             </TouchableOpacity>
+            <View style={{ justifyContent: "center", alignItems: "center" }}>
+              <FontAwesome name="bank" size={48} style={{ marginBottom: 15 }} />
+              <Text
+                style={{
+                  color: "black",
+                  textAlign: "center",
+                  fontWeight: "bold",
+                  fontSize: 20,
+                  marginBottom: 10,
+                }}
+              >
+                {bankNameModal}
+              </Text>
+              <Text
+                style={{
+                  color: "#36393b",
+                  textAlign: "center",
+                }}
+              >
+                Defina seu novo saldo
+              </Text>
+              <BankamountInput />
+            </View>
+            <GraySubmitButton onPress={console.log} />
           </View>
         </View>
       </Modal>

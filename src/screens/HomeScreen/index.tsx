@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ScrollView, StatusBar, View } from "react-native";
-import { ProfileStats } from "@components/profile-status";
-import { Amount } from "@components/amount";
+import { ProfileStats } from "@components/ProfileStatus";
+import { Amount } from "@components/Amount";
 import { BanksList } from "@components/BankList";
 import { Divider } from "@components/Divider";
 import { useNavigation } from "@react-navigation/native";
