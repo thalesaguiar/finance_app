@@ -2,7 +2,7 @@ import { Container, NavigationTab, Text } from "./styles";
 import { GoBackButton } from "@components/GoBackButton";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import { ButtonIcon } from "@components/ButtonAdd";
-import { Modal, ScrollView, TouchableOpacity, View } from "react-native";
+import { Modal, ScrollView, TextInput, TouchableOpacity, View } from "react-native";
 import { useState, useCallback } from "react";
 import { banksGetAll } from "@storage/bank/bankGetAll";
 import { BankCard } from "@components/BankCard";
@@ -10,6 +10,7 @@ import { Feather, FontAwesome, MaterialIcons } from "@expo/vector-icons";
 import BankamountInput from "@components/BankAmountInput";
 import { SubmitButton } from "@components/SubmitButton";
 import { GraySubmitButton } from "@components/GraySubmitButton";
+import { bankAmountSet } from "@storage/bank/bankAmountSet";
 
 export function BankList() {
   const navigation = useNavigation();
@@ -17,6 +18,7 @@ export function BankList() {
   const [index, setIndex] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
   const [bankNameModal, setBankNameModal] = useState("");
+  const [bankAmount, setBankAmount] = useState('');
 
   function saveData(bankName: string) {
     navigation.navigate("EditBanks", { bankName });
@@ -24,10 +26,17 @@ export function BankList() {
   async function fetchBanks() {
     try {
       const data = await banksGetAll();
-      console.log("data", data);
-      setBanks(data);
+      setBanks(data); 
     } catch (error) {
       console.log(error);
+    }
+  }
+
+  async function amountSet(bankName:string, amount:string) {
+    try {
+      const amountData = await bankAmountSet(bankName, amount);
+    }catch(error){
+      throw error
     }
   }
 
@@ -68,7 +77,7 @@ export function BankList() {
           >
             <BankCard
               title={item}
-              amount={""}
+              amount={bankAmount}
               goTo={() => {
                 setIndex(index);
                 saveData(item);
@@ -134,9 +143,12 @@ export function BankList() {
               >
                 Defina seu novo saldo
               </Text>
-              <BankamountInput />
+              <TextInput
+                style={{ width:'80%', padding: 10,  justifyContent:"center", color:'red', borderColor:'red',  borderWidth: 1}}
+                onChangeText={() => setBankAmount}
+              />
             </View>
-            <GraySubmitButton onPress={console.log} />
+            {/* <GraySubmitButton onPress={() => amountSet(bankNameModal)} /> */}
           </View>
         </View>
       </Modal>

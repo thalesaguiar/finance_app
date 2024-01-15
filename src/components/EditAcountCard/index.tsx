@@ -16,7 +16,6 @@ type Props = {
 
 export function EditAcountCard({ title, currentBalance }: Props) {
   useEffect(() => {
-    console.log(title, currentBalance);
   }, [title, currentBalance]);
 
   return (

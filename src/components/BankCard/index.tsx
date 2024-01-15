@@ -35,7 +35,7 @@ export function BankCard({ title, amount, goTo, openModal }: Props) {
       <Divider />
       <AmountWrapper>
         <Text>Seu balanço</Text>
-        <Amount>R$ {0}</Amount>
+        <Amount>R$ {amount}</Amount>
         <TouchableOpacity onPress={openModal}>
           <FontAwesome name="pencil" size={18} />
         </TouchableOpacity>
