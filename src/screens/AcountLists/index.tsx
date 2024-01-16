@@ -18,7 +18,7 @@ export function BankList() {
   const [index, setIndex] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
   const [bankNameModal, setBankNameModal] = useState("");
-  const [bankAmount, setBankAmount] = useState('');
+  const [bankAmount, setBankAmount] = useState('0');
 
   function saveData(bankName: string) {
     navigation.navigate("EditBanks", { bankName });
@@ -30,6 +30,11 @@ export function BankList() {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  const handleTextChange = (text: string) => {
+    setBankAmount(text);
+    console.log('Text', text);
   }
 
   async function amountSet(bankName:string, amount:string) {
@@ -145,10 +150,10 @@ export function BankList() {
               </Text>
               <TextInput
                 style={{ width:'80%', padding: 10,  justifyContent:"center", color:'red', borderColor:'red',  borderWidth: 1}}
-                onChangeText={() => setBankAmount}
+                onChangeText={handleTextChange}
               />
             </View>
-            {/* <GraySubmitButton onPress={() => amountSet(bankNameModal)} /> */}
+             <GraySubmitButton onPress={() => amountSet(bankNameModal, bankAmount)} />
           </View>
         </View>
       </Modal>

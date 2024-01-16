@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import {theme} from '../../theme';
+import { theme } from "../../theme";
 
 export const Container = styled.SafeAreaView`
   flex: 1;
@@ -7,7 +7,7 @@ export const Container = styled.SafeAreaView`
   justify-content: flex-start;
   align-items: center;
   background-color: ${theme.COLORS.WHITE_100};
-`
+`;
 
 export const BackButtonContainer = styled.View`
   width: 100%;
@@ -16,7 +16,7 @@ export const BackButtonContainer = styled.View`
   margin-top: 20px;
   margin-bottom: 10px;
   margin-left: 20px;
-`
+`;
 
 export const AcountCreator = styled.View`
   width: 100%;
@@ -25,17 +25,15 @@ export const AcountCreator = styled.View`
   margin-top: 20px;
   margin-bottom: 10px;
   padding: 5px;
-`
+`;
 
-export const FormInput = styled.TextInput `
+export const FormInput = styled.TextInput`
   width: 100%;
   height: 50px;
   border: none;
   padding: 10px;
   font-size: ${theme.FONT_SIZE.LG}px;
-
-
-`
+`;
 
 export const FormWrapper = styled.View`
   width: 100%;
@@ -44,7 +42,7 @@ export const FormWrapper = styled.View`
   margin-top: 10px;
   margin-bottom: 10px;
   flex-direction: row;
-`
+`;
 
 export const IconSelectContainer = styled.View`
   width: 100%;
@@ -53,7 +51,7 @@ export const IconSelectContainer = styled.View`
   justify-content: flex-start;
   margin-top: 10px;
   flex-direction: row;
-`
+`;
 
 export const IconSelectButton = styled.TouchableOpacity`
   width: 40px;
@@ -67,12 +65,12 @@ export const IconSelectButton = styled.TouchableOpacity`
   border-width: 3px;
   border-style: dashed;
   border-color: ${theme.COLORS.GRAY_300};
-`
+`;
 
 export const TextIcon = styled.Text`
   color: ${theme.COLORS.GRAY_300};
   font-size: ${theme.FONT_SIZE.LG}px;
-`
+`;
 
 export const HideBalanceWrapper = styled.View`
   width: 100%;
@@ -81,22 +79,20 @@ export const HideBalanceWrapper = styled.View`
   flex-direction: row;
   padding-left: 15px;
   padding-right: 15px;
-`
+`;
 
 export const TextBalanceTitle = styled.Text`
   color: ${theme.COLORS.GRAY_400};
   font-size: ${theme.FONT_SIZE.MD}px;
-`
+`;
 
-export const SwitchButton = styled.Switch`
-  
-`
+export const SwitchButton = styled.Switch``;
 
 export const ComponentTitle = styled.Text`
   font-size: ${theme.FONT_SIZE.MD}px;
   font-weight: bold;
   color: ${theme.COLORS.GRAY_400};
-`
+`;
 
 export const SectionWrapper = styled.View`
   width: 100%;
@@ -104,11 +100,11 @@ export const SectionWrapper = styled.View`
   flex-direction: column;
   margin-top: 10px;
   margin-left: 20px;
-`
+`;
 
 export const SubmitButtonWrapper = styled.View`
   width: 100%;
   min-height: 90%;
   justify-content: center;
   align-items: center;
-`
+`;
