@@ -2,7 +2,13 @@ import { Container, NavigationTab, Text } from "./styles";
 import { GoBackButton } from "@components/GoBackButton";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 import { ButtonIcon } from "@components/ButtonAdd";
-import { Modal, ScrollView, TextInput, TouchableOpacity, View } from "react-native";
+import {
+  Modal,
+  ScrollView,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { useState, useCallback } from "react";
 import { banksGetAll } from "@storage/bank/bankGetAll";
 import { BankCard } from "@components/BankCard";
@@ -18,7 +24,7 @@ export function BankList() {
   const [index, setIndex] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
   const [bankNameModal, setBankNameModal] = useState("");
-  const [bankAmount, setBankAmount] = useState('0');
+  const [bankAmount, setBankAmount] = useState("0");
 
   function saveData(bankName: string) {
     navigation.navigate("EditBanks", { bankName });
@@ -26,7 +32,7 @@ export function BankList() {
   async function fetchBanks() {
     try {
       const data = await banksGetAll();
-      setBanks(data); 
+      setBanks(data);
     } catch (error) {
       console.log(error);
     }
@@ -34,14 +40,14 @@ export function BankList() {
 
   const handleTextChange = (text: string) => {
     setBankAmount(text);
-    console.log('Text', text);
-  }
+    console.log("Text", text);
+  };
 
-  async function amountSet(bankName:string, amount:string) {
+  async function amountSet(bankName: string, amount: string) {
     try {
       const amountData = await bankAmountSet(bankName, amount);
-    }catch(error){
-      throw error
+    } catch (error) {
+      throw error;
     }
   }
 
@@ -149,11 +155,23 @@ export function BankList() {
                 Defina seu novo saldo
               </Text>
               <TextInput
-                style={{ width:'80%', padding: 10,  justifyContent:"center", color:'red', borderColor:'red',  borderWidth: 1}}
+                style={{
+                  width: "80%",
+                  padding: 10,
+                  justifyContent: "center",
+                  color: "red",
+                  borderColor: "red",
+                  borderWidth: 1,
+                }}
                 onChangeText={handleTextChange}
               />
             </View>
-             <GraySubmitButton onPress={() => amountSet(bankNameModal, bankAmount)} />
+            <GraySubmitButton
+              onPress={() => {
+                amountSet(bankNameModal, bankAmount);
+                setModalVisible(!modalVisible);
+              }}
+            />
           </View>
         </View>
       </Modal>
