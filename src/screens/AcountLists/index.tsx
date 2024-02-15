@@ -38,9 +38,17 @@ export function BankList() {
     }
   }
 
+  async function defineBankAmount() {
+    try {
+      bankAmountSet(bankAmount, bankNameModal);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   const handleTextChange = (text: string) => {
     setBankAmount(text);
-    console.log("Text", text);
+    // console.log("Text", text);
   };
 
   async function amountSet(bankName: string, amount: string) {
